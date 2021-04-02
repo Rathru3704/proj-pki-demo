@@ -79,7 +79,7 @@ const caesarShift = function (str, amount) {
     return output;
   };
   
-  const symMsg = caesarShift(msg.toString(), 1);
+  const symMsg = caesarShift('Know that wherever you are and wherever you go that you will always be in my thoughts.', 1);
 
 // ***************************************************************  
 
@@ -89,7 +89,7 @@ const server = http.createServer((req, res) => {
     
     if(pathName === '/'){
         res.writeHead(200, {'Content-type': 'text/html',});
-        res.end('<h1>Welcome my love!</h1>');
+        res.end('<h1>Welcome PKI presentation!</h1>');
     }
     else if(pathName === '/symmetric'){
         res.writeHead(200, {'Content-type': 'text/html',});
@@ -110,7 +110,7 @@ const server = http.createServer((req, res) => {
                 <p>${boyKeys.publicKey}</p>
                 <br>
                 <h3>Encrypted message is:</h3>
-                <p>${enc.toString()}</p>
+                <p>${enc.toString("base64")}</p>
             `);
         }
     }
